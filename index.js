@@ -92,7 +92,7 @@ $(function () {
           $msg.html('');
           return true;
         } else {
-          $msg.html('密码设置不符合要求');
+          $msg.html('格式错误,必须包含字母/数字以及符号至少两种,长度8-14位');
           return false;
         }
       case 'validata':
