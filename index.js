@@ -56,7 +56,6 @@ $(function () {
   })
   $('form').change(function(){
     if($login.val() !== '' && $pwd.val() !== '' && $username.val() !== '' && $validata.val() !== '' && $cbox.prop('checked')){
-      $submit.removeAttr('disabled');
       $submit.css({
         "background-color":'#3f89cc',
         "box-shadow":"0 8px 20px 0 #8f9fff"
