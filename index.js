@@ -55,12 +55,42 @@ $(function () {
     }, 1000);
   })
   $('form').change(function(){
-    console.log('hello');
     if($login.val() !== '' && $pwd.val() !== '' && $username.val() !== '' && $validata.val() !== '' && $cbox.prop('checked')){
+      $submit.removeAttr('disabled');
       $submit.css({
         "background-color":'#3f89cc',
         "box-shadow":"0 8px 20px 0 #8f9fff"
       });
+    }else{
+      $submit.attr('disabled');
+      $submit.css({
+        "background-color":'#BDCEFC',
+      });
+    }
+  });
+  $submit.click(function(){
+    if (!validation('#username')){
+      $username.select();
+      return ;
+    } 
+    if (!validation('#login')){
+      $login.select();
+      return ;
+    } 
+    if (!validation('#pwd')){
+      $pwd.select();
+      return ;
+    }
+    if (!validation('#validata')){
+      if (!validation('#pwd')){
+      $validata.select();
+      return ;
+      }
+    }
+    if(!$cbox.prop('checked')){
+      $cbox.css({
+        'box-shadow':'0 0 10px #3f89cc;'
+      })
     }
   })
   function validation(filed) {
